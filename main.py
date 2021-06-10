@@ -7,14 +7,19 @@ from pymongo import MongoClient
 #Connectez-vous au serveur de base de données MongoDB
 # Making a Connection with MongoClient
 client = MongoClient("mongodb://localhost:27017/")
+print(client.list_database_names())
 # database
 db = client["emily"]
+print(db.list_collection_names())
 # collection
 user = db["User"]
 
 app = Flask(__name__)
 jwt = JWTManager(app)
 
+register1 = {
+           "email": "ahlemmhamdi62@gmail.com" ,"first_name": "Ahlem", "last_name": "Mhamdi", "password": "Toto2021"
+            }
 # JWT Config
 app.config["JWT_SECRET_KEY"] = "this-is-secret-key" #change it
 
