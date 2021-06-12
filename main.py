@@ -3,6 +3,7 @@ import pymongo
 from flask import Flask, jsonify, request
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token
 from pymongo import MongoClient
+from gevent.pywsgi import WSGIServer
 
 #Connectez-vous au serveur de base de données MongoDB
 # Making a Connection with MongoClient
@@ -68,5 +69,7 @@ def dasboard():
     return jsonify(message="Welcome! to the Data Science Learner")
 
 if __name__ == '__main__':
-    app.run(host="localhost", debug=True)
+#app.run(host="localhost", debug=True)
 
+ http_server = WSGIServer(('', 5000), app)
+ http_server.serve_forever()
