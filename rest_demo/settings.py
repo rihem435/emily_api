@@ -26,8 +26,8 @@ class Config(object):
     ERROR_404_HELP = True
 
     # SQLAlchemy settings
-    # SQLALCHEMY_DATABASE_URI = 'mysql://root@localhost:3306/emily_db?charset=utf8mb4'
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///emily.db'
+    SQLALCHEMY_DATABASE_URI = 'mysql://emily:toto@localhost/emily_db?charset=utf8mb4'
+    #SQLALCHEMY_DATABASE_URI = 'sqlite:///emily.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
